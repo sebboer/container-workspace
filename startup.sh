@@ -23,7 +23,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --no-bash --no-fish --key-bindings --completion --update-rc
 
 # FZF-TAB
-git clone https://github.com/Aloxaf/fzf-tab "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab"
+git clone https://github.com/Aloxaf/fzf-tab "$HOME/.oh-my-zsh/plugins/fzf-tab"
 
 # CONFIG: ZSH, NVIM...
 curl -fLo "$HOME/.config/zsh/common-aliases.zsh" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.config/zsh/common-aliases.zsh
@@ -32,7 +32,7 @@ curl -fLo "$HOME/.config/zsh/variables.zsh" --create-dirs https://raw.githubuser
 
 curl -fLo "$HOME/.config/nvim/init.vim" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.config/nvim/init.vim
 
-curl -fLo "$HOME/.oh-my-zsh/custom/plugins/vi-mode-custom.plugin.zsh" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.oh-my-zsh/custom/plugins/vi-mode-custom/vi-mode-custom.plugin.zsh
+curl -fLo "$HOME/.oh-my-zsh/custom/plugins/vi-mode-custom/vi-mode-custom.plugin.zsh" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.oh-my-zsh/custom/plugins/vi-mode-custom/vi-mode-custom.plugin.zsh
 curl -fLo "$HOME/.oh-my-zsh/custom/themes/bira-custom-no-git.zsh-theme" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.oh-my-zsh/custom/themes/bira-custom-no-git.zsh-theme
 curl -fLo "$HOME/.zshrc" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.zshrc
 
