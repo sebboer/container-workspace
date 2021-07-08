@@ -29,7 +29,7 @@ alias podc='podman container'
 alias podl='podman container logs'
 
 
-alias sudo=' sudo'
+alias sudo='sudo '
 alias nnn='nnn -doa'
 alias k9s='k9s --readonly'
 alias geoip='curl ipinfo.io | jq'
