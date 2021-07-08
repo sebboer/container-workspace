@@ -3,7 +3,7 @@
 sudo apt-get update && \
 sudo apt-get -y install zsh jq nnn shellcheck neovim gcc ripgrep curl fd-find && \
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
-/home/ubuntu/.cargo/bin/cargo install du-dust exa && \
+"$HOME/.cargo/bin/cargo" install du-dust exa && \
 mkdir -p ~/.local/bin && \
 ln -s "$(command -v fdfind)" ~/.local/bin/fd
 
