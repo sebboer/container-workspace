@@ -35,6 +35,7 @@ curl -fLo "$HOME/.config/nvim/init.vim" --create-dirs https://raw.githubusercont
 curl -fLo "$HOME/.oh-my-zsh/custom/plugins/vi-mode-custom/vi-mode-custom.plugin.zsh" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.oh-my-zsh/custom/plugins/vi-mode-custom/vi-mode-custom.plugin.zsh
 curl -fLo "$HOME/.oh-my-zsh/custom/themes/bira-custom-no-git.zsh-theme" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.oh-my-zsh/custom/themes/bira-custom-no-git.zsh-theme
 curl -fLo "$HOME/.zshrc" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.zshrc
+curl -fLo "$HOME/.tmux.conf" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.tmux.conf
 
 # install podman
 . /etc/os-release && \
