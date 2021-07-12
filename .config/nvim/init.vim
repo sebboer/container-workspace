@@ -16,6 +16,7 @@ Plug 'cespare/vim-toml'
 Plug 'joshdick/onedark.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
