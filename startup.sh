@@ -1,9 +1,9 @@
 #!/bin/bash
 
 sudo apt-get update && \
-sudo apt-get -y install zsh jq nnn shellcheck neovim gcc ripgrep curl fd-find && \
+sudo apt-get -y install zsh jq nnn shellcheck neovim gcc ripgrep curl fd-find yamllint && \
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
-"$HOME/.cargo/bin/cargo" install du-dust exa && \
+"$HOME/.cargo/bin/cargo" install du-dust exa hexyl && \
 mkdir -p ~/.local/bin && \
 ln -s "$(command -v fdfind)" ~/.local/bin/fd
 
@@ -59,5 +59,14 @@ sudo apt-get -y install \
 sudo groupadd docker
 sudo usermod -aG docker "$USER"
 
+# git aliases
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+
+# install azure-cli
+sudo apt-get install python3-dev libffi-dev pip3
+pip install azure-cli
 
 echo "installation done!"
