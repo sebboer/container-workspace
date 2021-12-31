@@ -47,13 +47,6 @@ curl -fLo "$HOME/.oh-my-zsh/custom/themes/bira-custom-no-git.zsh-theme" --create
 curl -fLo "$HOME/.zshrc" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.zshrc
 curl -fLo "$HOME/.tmux.conf" --create-dirs https://raw.githubusercontent.com/sebboer/container-workspace/master/.tmux.conf
 
-# install podman
-. /etc/os-release && \
-echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/testing/xUbuntu_${VERSION_ID}/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:testing.list && \
-curl -L "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/testing/xUbuntu_${VERSION_ID}/Release.key" | sudo apt-key add - && \
-sudo apt-get update -qq && \
-sudo apt-get -qq -y install podman containernetworking-plugins
-
 # install docker
 if [[ $OS == "rhel" ]];then
 	sudo dnf -y install dnf-plugins-core && \
@@ -75,6 +68,12 @@ elif [[ $OS == "ubuntu" ]]; then
 			fi
 			sudo apt-get update && \
 			sudo apt-get -y install docker-ce docker-ce-cli containerd.io
+	# install podman
+	. /etc/os-release && \
+	echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/testing/xUbuntu_${VERSION_ID}/ /" | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:testing.list && \
+	curl -L "https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/testing/xUbuntu_${VERSION_ID}/Release.key" | sudo apt-key add - && \
+	sudo apt-get update -qq && \
+	sudo apt-get -qq -y install podman containernetworking-plugins
 fi
 
 sudo groupadd docker
