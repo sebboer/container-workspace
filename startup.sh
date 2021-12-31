@@ -1,13 +1,23 @@
 #!/bin/bash
 
-sudo apt-get update && \
-sudo apt-get -y install zsh jq nnn shellcheck neovim gcc ripgrep curl fd-find yamllint && \
+OS=$(grep '^ID=' /etc/os-release | awk -F= '{print $2}' | tr -d '"')
+if [[ $OS == "rhel" ]];then
+	echo "distribution is rhel"
+	sudo dnf update && \
+		sudo dnf install -y zsh jq nnn shellcheck neovim gcc rigprep curl fd-find yamllint || exit 1
+		sudo dnf -y upgrade
+elif [[ $OS == "ubuntu" ]]; then
+	echo "distribution is Ubuntu"
+	sudo apt-get update && \
+	sudo apt-get -y install zsh jq nnn shellcheck neovim gcc ripgrep curl fd-find yamllint && \
+	sudo apt-get -y upgrade
+fi
+
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
 "$HOME/.cargo/bin/cargo" install du-dust exa hexyl && \
 mkdir -p ~/.local/bin && \
 ln -s "$(command -v fdfind)" ~/.local/bin/fd
 
-sudo apt-get -y upgrade
 
 # VIM PLUG
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -69,9 +79,5 @@ git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
-
-# install azure-cli
-sudo apt-get install python3-dev libffi-dev pip3
-pip install azure-cli
 
 echo "installation done!"
